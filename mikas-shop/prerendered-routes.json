@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/cart",
+    "/catalogue",
+    "/details",
+    "/shell",
+    "/shell/cart",
+    "/shell/catalogue",
+    "/shell/details",
+    "/shell/upload",
+    "/upload"
+  ]
+}
