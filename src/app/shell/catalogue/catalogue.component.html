@@ -1,0 +1,63 @@
+  <div class="d-flex justify-content-center  " >
+    <!-- <ng-container *ngIf="!noProductFound"> -->
+    <div class="col-md-12" *ngFor="let elem of currentPageProducts; let i = index">
+      
+      <div class="row p-2   rounded flexing"  >
+        <div class="col-md-4 mt-2 align-items-center imageDiv">
+          <div class="image-container" style="margin-left: 1.5rem;">
+            <button class="prev" (click)="prevImageMetode(elem, $event)"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <img [src]="elem.images[elem.imageIndex]" class="card-img-top" alt="no img found">
+            <button class="next" (click)="nextImageMetode(elem, $event)"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="col-md-7 textInCard " >
+          <div class="col-md-5 mt-1 deckClass">
+            <h5 class="productName" (click)="navigateToDetails(elem)">{{elem.title}}</h5>
+            <div class="d-flex flex-row">
+              <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                  class="fa fa-star"></i></div>
+            </div>
+            <div class="mt-1 mb-1 spec-1">
+              <span>{{elem.child_category}}</span>
+            </div>
+            <div class="mt-1 mb-1 spec-1">
+              <span>{{elem.category}}</span><span class="dot"></span>
+              <span>{{elem.size}}</span><span class="dot"></span>
+              <span>{{elem.color}}<br></span>
+            </div>
+            <p class="text-justify  para mb-0">{{elem.description}}</p>
+          </div>
+            <div class="align-items-center align-content-top col-md-3   priceIncart" >
+              <div class="d-flex flex-row align-items">
+                <h4 class="mr-1">{{elem.price | currency:'₾ '}}</h4>
+              </div>
+              <h6 class="text-success">Free shipping</h6>
+              <div class="d-flex flex-column mt-4">
+                <button class="btn btn-primary btn-sm" style="max-width: 300px;" (click)="navigateToDetails(elem)">Details</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" style="max-width: 300px;"  (click)="checkAutorithation(elem)">Add to
+                  Cart</button>
+              </div>
+            </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div class="pagination">
+      <button class="pagButton" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1"><i class="bi bi-arrow-bar-left"></i></button>
+      <button class="pagButtonNums" *ngIf="totalPages > 0 && currentPage !== 1" (click)="changePage(1)">{{ 1 }}</button>
+      <span *ngIf="currentPage > 3 && totalPages > 3">...</span>
+      <button class="pagButtonNums" *ngIf="currentPage > 1 && currentPage !== 2" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">{{ currentPage - 1 }}</button>
+      <button class="pagButtonNums active">{{ currentPage }}</button>
+      <button class="pagButtonNums" *ngIf="currentPage < totalPages && currentPage !== totalPages - 1" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">{{ currentPage + 1 }}</button>
+      <span *ngIf="totalPages - currentPage > 1 && totalPages > 3">...</span>
+      <button class="pagButtonNums" *ngIf="totalPages > 1 && currentPage !== totalPages" (click)="changePage(totalPages)">{{ totalPages }}</button>
+      <button class="pagButton" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages"><i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+  <!-- </ng-container> -->
+  <!-- <div *ngIf="noProductFound">
+    <h4>No Product Found</h4>
+  </div> -->
+    
+    
+  </div>

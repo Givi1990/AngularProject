@@ -1,0 +1,80 @@
+
+*{
+	font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+
+
+
+.col-4 {
+    width: auto;
+    min-width: 380px;
+    background-color: rgba(255, 255, 255, 0.57);
+    padding: 30px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.37);
+    border: none;
+}
+
+
+
+.error-text{
+    color: red;
+    font-weight: 200;
+    font-size: 12px;
+    display: block;
+    box-sizing: border-box;
+}
+
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+.agree-submit {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: end;
+    box-sizing: border-box;
+}
+
+
+.form-check {
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+
+  
+ .modal {
+    display: block;
+    border: none;
+ }
+
+  
+
+
+.closeModal {
+    border: none;
+    background-color: white;
+    margin-left: 90%;
+}
+
+
+.bd-example-modal-lg{
+    width: 28rem;
+}
+
+
+
+
+
+
+
+

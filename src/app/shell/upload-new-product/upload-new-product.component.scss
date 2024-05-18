@@ -1,0 +1,22 @@
+.categoryChange {
+    display: flex;
+    flex-direction: row;
+}
+
+.upLoad{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.productTable {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.productTable th,
+.productTable td {
+    border: 1px solid black;
+}

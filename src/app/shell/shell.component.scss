@@ -1,0 +1,384 @@
+
+
+.navbar {
+    background-color: #fffffe !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.37);
+    position: sticky;
+    margin: 0 auto;
+    top: 0;
+    width: 100%; 
+    z-index: 999; 
+}
+
+
+.upNav{
+    width: 100%;
+    height: 5rem;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:1.5rem;
+    align-items: center;
+    
+}
+
+.downNav{
+    width: 100%;
+    height: 5rem;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    gap:1.5rem;
+    justify-content: space-around;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    width: 20%;
+    padding-left: 1rem;
+    min-width: 3rem;
+    max-width: 20rem;
+    justify-content: center;
+}
+
+.logoImg {
+    margin-left: 15px;
+    width: 70%;
+    max-width: 20rem;
+    min-width: 2rem;
+}
+
+
+.ulNav {
+    width: 50%;
+    min-width: 12rem;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.nav-item:hover{
+    font-weight: 600;
+    transition: transform 0.8s ease;
+    padding-bottom: 0;
+    text-decoration: none; 
+    text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
+}
+.user {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.bi-person-circle {
+    font-size: 2em;
+}
+
+.bi-person-circle:hover {
+    transform: rotatey(180deg);
+    transition: transform 1.2s ease;
+}
+
+
+.dropdownUser {
+    width: auto;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap:1rem;
+    right: 0.1rem;
+    top: 3.85rem;
+    background-color: white;
+    box-shadow:2px 4px 7px -1px rgba(0,0,0,0.37);
+    z-index: 10;
+    border-radius: 5%;
+}
+
+
+
+.userButton {
+    border: none;
+    background-color: white;
+    margin-top: -1rem;
+}
+
+
+
+.filter {
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+}
+
+.btn-shadow:hover {
+    text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    width: 100%;
+    height: 50%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cart {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+}
+
+.dropdownMenu {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    top: 10rem;
+    left: 0.2rem;
+    background-color: white;
+    box-shadow:2px 4px 7px -1px rgba(0,0,0,0.37);
+    z-index: 10;
+    border-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.dropdownMenu::-webkit-scrollbar {
+    width: 4px; 
+}
+
+
+
+.form-check,
+h6 {
+    margin: 1rem;
+    
+}
+
+.inputSearch {
+    width: 60%;
+    height: auto;
+    padding-bottom: 1%;
+}
+
+
+
+.search {
+    
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border-radius: 25px;
+    border: 0.5px solid rgb(194, 194, 194);
+    box-shadow: 2px 4px 7px -1px rgba(0,0,0,0.37);
+    transition: width 0.5s ease-in, margin-right 0.5s ease-in;
+}
+
+.search:hover{
+    transition: width 0.7s ease-out, margin-right 0.7s ease-out;
+}
+
+.input-container {
+    position: relative;
+    width: 65%;
+    height: auto;
+    padding-bottom: 1%;
+  }
+  
+  .serchSumbit {
+    position: absolute;
+    top: 65%;
+    right: 19%;
+    transform: translateY(-50%);
+  }
+
+  input::placeholder {
+    color: #999;
+  }
+
+  .dropDownCart {
+    width: auto;
+    max-width: 250px;
+    height: auto;
+    max-height: 420px;
+    padding-top: 5px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    top: 10rem;
+    right: 0.02rem;
+    background-color: white;
+    box-shadow:2px 4px 7px -1px rgba(0,0,0,0.37);
+    z-index: 10;
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  
+
+  .cartDrop {
+    width: 100%;
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+    list-style: none;
+  }
+
+//   .cartButton{
+    
+//   }
+  
+
+  .cartDropUl{
+    min-height: 5rem;
+  }
+
+  .cartImg {
+    width: 4rem;
+    max-height: 4rem;
+    
+  }
+
+  .cartInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -2rem;
+  }
+
+  .btn-light {
+    width: 110%;
+    overflow: hidden;
+  }
+
+  .cartDetails {
+    max-height: 350px;
+    margin-left: 1rem;
+  }
+
+
+  .cartProduct {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .cartProduct::-webkit-scrollbar {
+    width: 4px; 
+}
+
+.langTung{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+.language{
+    align-self: center;
+    padding-right: 5px;
+}
+
+
+.tongle {
+    margin: 2rem 0 ;
+    padding-top: 2px;
+    
+}
+
+.icons {
+    display: none;
+}
+
+
+// @media screen and (max-width: 1400px) {
+  
+//     .main {
+//         width: 1200px;
+//     }
+  
+    
+// }
+
+
+// @media screen and (max-width: 1200px) {
+//     .main {
+//         width: 992px;
+//     }
+    
+  
+    
+// }
+
+
+@media screen and (max-width: 992px) {
+    .icons {
+        display: inline;
+    }
+
+    .letters {
+        display: none;
+    }
+    .dIcons {
+        font-size: 25px;
+    }
+    .userSize {
+        font-size: 14px;
+    }
+    
+    .logo {
+        width: 10rem;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .userSize {
+        margin-left: 8px;
+    }
+    .logo {
+        width: 10rem;
+        padding-left: 0;
+    }
+    
+     
+}
+
+@media screen and (max-width: 576px) {
+    .filterDrop{
+        margin-left: 10px;
+    }
+    .userSize {
+        margin-left: 4px;
+    }
+    .navbar{
+        width: 106%;
+        margin-left: -3%;
+    }
+    .logo {
+        width: 10rem;
+        padding-left: 0;
+    }
+}

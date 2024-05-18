@@ -1,0 +1,106 @@
+<!-- login html -->
+    <div class="modal" id="exampleModal" tabindex="-1"   aria-hidden="true" style=" border: none; background-color: rgba(128, 128, 128, 0.241);">
+        <div class="modal-dialog" role="document" style="border: none; border-radius: none!important;" >
+            <div class="modal-content" style="border: none; border-radius: none!important;">
+                <div class="col-4" *ngIf="!gotoRegGoToLog" style="border-radius: none!important;">
+                    <button class="closeModal" (click)="closeLoginModal()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <form [formGroup]="registrationForm" autocomplete="on">
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input type="text" class="form-control" id="username" formControlName="username"
+                                autocomplete="username">
+                            <span id="usernameHelp" class="error-text"
+                                *ngIf="registrationForm.get('username')?.dirty && registrationForm.get('username')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email"
+                                autocomplete="email">
+                            <span id="emailHelp" class="error-text"
+                                *ngIf="registrationForm.get('email')?.dirty && registrationForm.get('email')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" formControlName="password"
+                                autocomplete="current-password">
+                            <span id="passHelp" class="error-text"
+                                *ngIf=" registrationForm.get('password')?.dirty && registrationForm.get('password')?.errors?.['firstLetterUpperCase']">Password
+                                must start with an uppercase letter.</span>
+                            <span id="passHelp2" class="error-text"
+                                *ngIf=" registrationForm.get('password')?.dirty && registrationForm.get('password')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" formControlName="city" autocomplete="city">
+                            <span id="addressHelp" class="error-text"
+                                *ngIf="registrationForm.get('city')?.dirty && registrationForm.get('city')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" formControlName="address"
+                                autocomplete="address">
+                            <span id="addressHelp" class="error-text"
+                                *ngIf="registrationForm.get('address')?.dirty && registrationForm.get('address')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="number" formControlName="phone"
+                                autocomplete="email">
+                            <span id="phoneHelp" class="error-text"
+                                *ngIf="registrationForm.get('phone')?.dirty && registrationForm.get('phone')?.errors?.['required']">Mandatory
+                                filling.</span>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary" (click)="registration()"
+                            [disabled]="registrationForm.invalid">Submit</button>
+                        <div class="agree-submit">
+                            <p style="font-size: 0.8rem">You already have an account? <a
+                                    style="color: blue; text-decoration: underline; font-size: 0.8rem"
+                                    (click)="goToRegistr()">Log in</a></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4" *ngIf="gotoRegGoToLog">
+                    <button class="closeModal" (click)="closeLoginModal()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <form [formGroup]="loginForm" autocomplete="on">
+                        <div class="form-group">
+                            <label for="usernameLog">Email address</label>
+                            <input type="email" class="form-control" id="usernameLog" formControlName="usernameLog"
+                                autocomplete="usernameLog">
+                            <!-- <span id="usernameLoginHelp" class="error-text"
+                                *ngIf="registrationForm.get('usernameLog')?.dirty && registrationForm.get('usernameLog')?.errors?.['required']">Mandatory
+                                filling.</span> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordLog">Password</label>
+                            <input type="password" class="form-control" id="passwordLog" formControlName="passwordLog"
+                                autocomplete="password">
+                            <!-- <span id="passwordLoginHelp" class="error-text"
+                                *ngIf=" registrationForm.get('passwordLog')?.dirty && registrationForm.get('passwordLog')?.errors?.['firstLetterUpperCase']">Password
+                                must start with an uppercase letter.</span>
+                            <span id="passwordLoginHelp2" class="error-text"
+                                *ngIf=" registrationForm.get('passwordLog')?.dirty && registrationForm.get('passwordLog')?.errors?.['required']">Mandatory
+                                filling.</span> -->
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+                        <div class="agree-submit">
+                            <p style="font-size: 0.8rem">Don't have an account? <a
+                                    style="color: blue; text-decoration: underline; font-size: 0.8rem"
+                                    (click)="goToRegistr()"> Register</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

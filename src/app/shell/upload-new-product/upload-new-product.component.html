@@ -1,0 +1,207 @@
+<div class="upLoad">
+  <div style="min-width: 380p; margin-top: 1rem;">
+    <form [formGroup]="productForm" enctype="multipart/form-data" class="form-control">
+      <h5 style="text-align: center;">Upload New Product</h5>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+      <div class="form-group">
+        <label>ProductStyle</label>
+        <input type="text" class="form-control" formControlName="productStyle">
+      </div>
+      <div class="form-group">
+        <label>Barcode</label>
+        <input type="text" class="form-control" formControlName="barcode">
+      </div>
+      <div class="form-group" *ngIf="categoryBool">
+        <div class="category">
+          <label>Category</label> <br>
+          <div class="categoryChange">
+            <select formControlName="category" class="form-check" style="width: 217px;">
+              <option *ngFor="let cat of categoryArray">{{ cat }}</option>
+            </select>
+            <button class="btn btn-primary" style="margin-left: 10px; " (click)="inputNewCategory()">Add New
+              Category</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="!categoryBool">
+        <div class="category">
+          <label>Category</label> <br>
+          <div class="categoryChange">
+            <input type="text" class="form-control" formControlName="category" style="width: 245px">
+            <button class="btn btn-primary" style="margin-left: 5px; " (click)="inputNewCategory()">Return to
+              Select</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Child Category</label>
+        <input type="text" class="form-control" formControlName="child_category">
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" class="form-control" formControlName="price">
+      </div>
+      <div class="form-group">
+        <label>Stock</label>
+        <input type="number" class="form-control" formControlName="stock">
+      </div>
+      <div class="form-group">
+        <label>Sizes</label>
+        <input type="text" class="form-control" formControlName="sizes">
+      </div>
+      <div class="form-group">
+        <label>Color</label>
+        <input type="text" class="form-control" formControlName="color">
+      </div>
+      <br>
+      <div class="form-check">
+        <label>Image</label> &nbsp;
+        <input type="file" (change)="onFileSelected($event)" formArrayName="image" multiple>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-primary" (click)="uploadProduct()" style="width: 100%;">Upload New Product</button>
+    </form>
+
+  </div>
+  <br>
+  <div style="min-width: 380p; margin-top: 1rem;">
+    <form [formGroup]="changrProductForm" enctype="multipart/form-data" class="form-control">
+      <h5 style="text-align: center;">Change Product</h5>
+      <div class="form-group">
+        <label>ID</label>
+        <input type="number" class="form-control" formControlName="id">
+        <button class="btn btn-primary" (click)="findProduct()">Find Product</button>
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="newtitle">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" formControlName="newdescription">
+      </div>
+      <div class="form-group">
+        <label>ProductStyle</label>
+        <input type="text" class="form-control" formControlName="newproductStyle">
+      </div>
+      <div class="form-group">
+        <label>Barcode</label>
+        <input type="text" class="form-control" formControlName="newbarcode">
+      </div>
+      <div class="form-group" *ngIf="categoryBool">
+        <div class="category">
+          <label>Category</label> <br>
+          <div class="categoryChange">
+            <select formControlName="newcategory" class="form-check" style="width: 217px;">
+              <option *ngFor="let cat of categoryArray">{{ cat }}</option>
+            </select>
+            <button class="btn btn-primary" style="margin-left: 10px; " (click)="inputNewCategory()">Add New
+              Category</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="!categoryBool">
+        <div class="category">
+          <label>Category</label> <br>
+          <div class="categoryChange">
+            <input type="text" class="form-control" formControlName="newcategory" style="width: 245px">
+            <button class="btn btn-primary" style="margin-left: 5px; " (click)="inputNewCategory()">Return to
+              Select</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Child Category</label>
+        <input type="text" class="form-control" formControlName="newchild_category">
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" class="form-control" formControlName="newprice">
+      </div>
+      <div class="form-group">
+        <label>Stock</label>
+        <input type="number" class="form-control" formControlName="newstock">
+      </div>
+      <div class="form-group">
+        <label>Sizes</label>
+        <input type="text" class="form-control" formControlName="newsize">
+      </div>
+      <div class="form-group">
+        <label>Color</label>
+        <input type="text" class="form-control" formControlName="newcolor">
+      </div>
+      <br>
+      <div class="form-check">
+        <label>Image</label> &nbsp;
+        <div>
+          <img *ngFor="let img of imageArray" [src]="img" style="width: 60px; height: 60px;">
+        </div>
+        <input type="file" (change)="onFileSelected($event)" formArrayName="newimage" multiple>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-primary" (click)="changeProductMetode()" style="width: 100%;">Chage Product</button>
+    </form>
+  </div>
+  <br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table class="productTable">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Product Style</th>
+      <th>Barcode</th>
+      <th>Category</th>
+      <th>Color</th>
+      <th>Sizes</th>
+      <th>Child Category</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Id</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="12">
+        <form [formGroup]="productSearchForm">
+          <div class="form-group">
+            <input type="search" style="width: 100%;" formControlName="searchProduct" (input)="searchProduct()">
+          </div>
+        </form>
+      </th>
+    </tr>
+    <tr *ngFor="let elem of produstTableArray">
+      <td><img [src]='elem.images[0]' style="width: 90px; height: 90px;"></td>
+      <td>{{elem.title}}</td>
+      <td>{{elem.description}}</td>
+      <td>{{elem.product_style}}</td>
+      <td>{{elem.barcode}}</td>
+      <td>{{elem.category}}</td>
+      <td>{{elem.color}}</td>
+      <td>{{elem.size}}</td>
+      <td>{{elem.child_category}}</td>
+      <td>{{elem.price}}</td>
+      <td>{{elem.stock}}</td>
+      <td>{{elem.id}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteProductMetode(elem.id)">DELETE</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
